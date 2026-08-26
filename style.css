@@ -1,0 +1,535 @@
+/* ===================================
+   RESET
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #222;
+}
+
+.logo span {
+    color: #ff5a36;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    color: #555;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ff5a36;
+}
+
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero {
+    min-height: 520px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    color: white;
+}
+
+.subtitle {
+    color: #ff5a36;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    max-width: 650px;
+
+    font-size: 65px;
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #ff5a36;
+}
+
+.description {
+    max-width: 500px;
+
+    color: #dddddd;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+
+    background: #ff5a36;
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: #222;
+}
+
+
+/* ===================================
+   SECTION TITLE
+=================================== */
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-title p {
+    color: #ff5a36;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+
+    margin: 5px 0;
+}
+
+.section-title span {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ===================================
+   PRODUK
+=================================== */
+
+.produk {
+    padding: 90px 0;
+}
+
+.produk-container {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* CARD */
+
+.card {
+    background: white;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+/* GAMBAR */
+
+.card-image {
+    width: 100%;
+    height: 240px;
+
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.08);
+}
+
+
+/* ISI CARD */
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content small {
+    color: #ff5a36;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.card-content h3 {
+    font-size: 17px;
+
+    margin: 5px 0;
+}
+
+.card-content p {
+    color: #777;
+
+    font-size: 11px;
+
+    min-height: 55px;
+}
+
+.harga {
+    color: #ff5a36;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    margin: 12px 0;
+}
+
+.buy {
+    display: block;
+
+    background: #222;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 10px;
+
+    border-radius: 4px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.buy:hover {
+    background: #ff5a36;
+}
+
+
+/* ===================================
+   TENTANG
+=================================== */
+
+.tentang {
+    padding: 90px 20px;
+
+    background: #222;
+
+    color: white;
+
+    text-align: center;
+}
+
+.tentang-content {
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.tentang h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.tentang-content > p:last-child {
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+
+/* ===================================
+   KONTAK
+=================================== */
+
+.kontak {
+    padding: 90px 20px;
+
+    background: white;
+}
+
+.contact-info {
+    width: 90%;
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    text-align: center;
+}
+
+.contact-info div {
+    padding: 25px;
+
+    background: #f7f7f7;
+
+    border-radius: 8px;
+}
+
+.contact-info h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer {
+    padding: 30px 20px;
+
+    background: #111;
+
+    color: white;
+
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+.footer-logo span {
+    color: #ff5a36;
+}
+
+footer p {
+    color: #777;
+
+    font-size: 11px;
+}
+
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 900px) {
+
+    .produk-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+}
+
+
+/* ===================================
+   HP
+=================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+
+        padding: 18px 0;
+
+        gap: 15px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .produk {
+        padding: 70px 0;
+    }
+
+    .produk-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .card-image {
+        height: 180px;
+    }
+
+    .card-content {
+        padding: 13px;
+    }
+
+    .card-content h3 {
+        font-size: 13px;
+    }
+
+    .card-content p {
+        font-size: 10px;
+    }
+
+    .harga {
+        font-size: 14px;
+    }
+
+    .buy {
+        font-size: 10px;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+}
