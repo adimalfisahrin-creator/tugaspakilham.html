@@ -1,45 +1,71 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <link rel="stylesheet" href="style.css">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> - Portofolio Produk</title>
+    <meta name="description"
+          content="ABA STORE - Fashion, sepatu, tas, aksesoris dan gadget pilihan.">
 
-    <!-- Menghubungkan HTML dengan CSS -->
+    <title>ABA STORE - Portofolio Produk</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+    ========================== -->
     <header>
         <nav class="navbar">
 
-            <div class="logo">
-                KRIBO<span>STORE</span>
-            </div>
+            <a href="#home" class="logo">
+                ABA<span>STORE</span>
+            </a>
 
             <div class="menu">
                 <a href="#home">Home</a>
                 <a href="#produk">Produk</a>
                 <a href="#tentang">Tentang</a>
                 <a href="#kontak">Kontak</a>
+
+                <button
+                    class="cart-button"
+                    onclick="openCart()">
+
+                    🛒 Keranjang
+
+                    <span class="cart-count" id="cartCount">
+                        0
+                    </span>
+
+                </button>
             </div>
 
         </nav>
     </header>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         PROMO
+    ========================== -->
+    <div class="promo">
+        🔥 <strong>BELI 2 DISKON 10%</strong>
+        — Promo spesial ABA STORE!
+    </div>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
     <section class="hero" id="home">
 
         <div class="hero-content">
 
             <p class="subtitle">
-                WELCOME TO KRIBO STORE
+                WELCOME TO ABA STORE
             </p>
 
             <h1>
@@ -62,7 +88,9 @@
     </section>
 
 
-    <!-- PRODUK -->
+    <!-- =========================
+         PRODUK
+    ========================== -->
     <section class="produk" id="produk">
 
         <div class="section-title">
@@ -80,15 +108,73 @@
         </div>
 
 
-        <div class="produk-container">
+        <!-- SEARCH & FILTER -->
+        <div class="tools">
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="🔍 Cari produk..."
+                    oninput="filterProducts()">
+            </div>
+
+            <select
+                class="filter"
+                id="categoryFilter"
+                onchange="filterProducts()">
+
+                <option value="all">
+                    Semua Kategori
+                </option>
+
+                <option value="fashion">
+                    Fashion
+                </option>
+
+                <option value="sepatu">
+                    Sepatu
+                </option>
+
+                <option value="tas">
+                    Tas
+                </option>
+
+                <option value="aksesoris">
+                    Aksesoris
+                </option>
+
+                <option value="gadget">
+                    Gadget
+                </option>
+
+            </select>
+
+        </div>
 
 
-            <!-- PRODUK 1 -->
-            <div class="card">
+        <!-- PRODUCT GRID -->
+        <div
+            class="produk-container"
+            id="productContainer">
+
+
+            <!-- PRODUCT 1 -->
+            <div
+                class="card"
+                data-name="Kaos Oversize"
+                data-category="fashion">
 
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
-                         alt="Kaos Oversize">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
+                        alt="Kaos Oversize">
+
+                    <span class="stock">
+                        STOK TERSEDIA
+                    </span>
+
                 </div>
 
                 <div class="card-content">
@@ -108,21 +194,38 @@
                         Rp75.000
                     </div>
 
-                    <a href="https://wa.me/628136537544" class="buy">
-                        Beli Sekarang
-                    </a>
+                    <button
+                        class="buy"
+                        onclick="addToCart(
+                            'Kaos Oversize',
+                            75000,
+                            'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80'
+                        )">
+
+                        + Tambah ke Keranjang
+
+                    </button>
 
                 </div>
-
             </div>
 
 
-            <!-- PRODUK 2 -->
-            <div class="card">
+            <!-- PRODUCT 2 -->
+            <div
+                class="card"
+                data-name="Sneakers Sport"
+                data-category="sepatu">
 
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
-                         alt="Sneakers">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+                        alt="Sneakers Sport">
+
+                    <span class="stock">
+                        STOK TERSEDIA
+                    </span>
+
                 </div>
 
                 <div class="card-content">
@@ -142,21 +245,38 @@
                         Rp250.000
                     </div>
 
-                    <a href="https://wa.me/628136537544" class="buy">
-                        Beli Sekarang
-                    </a>
+                    <button
+                        class="buy"
+                        onclick="addToCart(
+                            'Sneakers Sport',
+                            250000,
+                            'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80'
+                        )">
+
+                        + Tambah ke Keranjang
+
+                    </button>
 
                 </div>
-
             </div>
 
 
-            <!-- PRODUK 3 -->
-            <div class="card">
+            <!-- PRODUCT 3 -->
+            <div
+                class="card"
+                data-name="Urban Backpack"
+                data-category="tas">
 
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
-                         alt="Backpack">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+                        alt="Urban Backpack">
+
+                    <span class="stock">
+                        STOK TERSEDIA
+                    </span>
+
                 </div>
 
                 <div class="card-content">
@@ -176,21 +296,38 @@
                         Rp150.000
                     </div>
 
-                    <a href="https://wa.me/628136537544" class="buy">
-                        Beli Sekarang
-                    </a>
+                    <button
+                        class="buy"
+                        onclick="addToCart(
+                            'Urban Backpack',
+                            150000,
+                            'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80'
+                        )">
+
+                        + Tambah ke Keranjang
+
+                    </button>
 
                 </div>
-
             </div>
 
 
-            <!-- PRODUK 4 -->
-            <div class="card">
+            <!-- PRODUCT 4 -->
+            <div
+                class="card"
+                data-name="Classic Watch"
+                data-category="aksesoris">
 
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80"
-                         alt="Jam Tangan">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80"
+                        alt="Classic Watch">
+
+                    <span class="stock">
+                        STOK TERSEDIA
+                    </span>
+
                 </div>
 
                 <div class="card-content">
@@ -210,21 +347,38 @@
                         Rp185.000
                     </div>
 
-                    <a href="https://wa.me/628136537544" class="buy">
-                        Beli Sekarang
-                    </a>
+                    <button
+                        class="buy"
+                        onclick="addToCart(
+                            'Classic Watch',
+                            185000,
+                            'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80'
+                        )">
+
+                        + Tambah ke Keranjang
+
+                    </button>
 
                 </div>
-
             </div>
 
 
-            <!-- PRODUK 5 -->
-            <div class="card">
+            <!-- PRODUCT 5 -->
+            <div
+                class="card"
+                data-name="Jaket Denim"
+                data-category="fashion">
 
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=600&q=80"
-                         alt="Jaket Denim">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=600&q=80"
+                        alt="Jaket Denim">
+
+                    <span class="stock">
+                        STOK TERSEDIA
+                    </span>
+
                 </div>
 
                 <div class="card-content">
@@ -244,21 +398,38 @@
                         Rp275.000
                     </div>
 
-                    <a href="https://wa.me/628136537544" class="buy">
-                        Beli Sekarang
-                    </a>
+                    <button
+                        class="buy"
+                        onclick="addToCart(
+                            'Jaket Denim',
+                            275000,
+                            'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=600&q=80'
+                        )">
+
+                        + Tambah ke Keranjang
+
+                    </button>
 
                 </div>
-
             </div>
 
 
-            <!-- PRODUK 6 -->
-            <div class="card">
+            <!-- PRODUCT 6 -->
+            <div
+                class="card"
+                data-name="Casual Shoes"
+                data-category="sepatu">
 
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"
-                         alt="Sepatu Casual">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"
+                        alt="Casual Shoes">
+
+                    <span class="stock">
+                        STOK TERSEDIA
+                    </span>
+
                 </div>
 
                 <div class="card-content">
@@ -278,21 +449,38 @@
                         Rp210.000
                     </div>
 
-                    <a href="https://wa.me/628136537544" class="buy">
-                        Beli Sekarang
-                    </a>
+                    <button
+                        class="buy"
+                        onclick="addToCart(
+                            'Casual Shoes',
+                            210000,
+                            'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80'
+                        )">
+
+                        + Tambah ke Keranjang
+
+                    </button>
 
                 </div>
-
             </div>
 
 
-            <!-- PRODUK 7 -->
-            <div class="card">
+            <!-- PRODUCT 7 -->
+            <div
+                class="card"
+                data-name="Shoulder Bag"
+                data-category="tas">
 
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"
-                         alt="Shoulder Bag">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"
+                        alt="Shoulder Bag">
+
+                    <span class="stock">
+                        STOK TERSEDIA
+                    </span>
+
                 </div>
 
                 <div class="card-content">
@@ -312,21 +500,38 @@
                         Rp125.000
                     </div>
 
-                    <a href="https://wa.me/628136537544" class="buy">
-                        Beli Sekarang
-                    </a>
+                    <button
+                        class="buy"
+                        onclick="addToCart(
+                            'Shoulder Bag',
+                            125000,
+                            'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80'
+                        )">
+
+                        + Tambah ke Keranjang
+
+                    </button>
 
                 </div>
-
             </div>
 
 
-            <!-- PRODUK 8 -->
-            <div class="card">
+            <!-- PRODUCT 8 -->
+            <div
+                class="card"
+                data-name="Sunglasses"
+                data-category="aksesoris">
 
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80"
-                         alt="Kacamata">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80"
+                        alt="Sunglasses">
+
+                    <span class="stock">
+                        STOK TERSEDIA
+                    </span>
+
                 </div>
 
                 <div class="card-content">
@@ -346,21 +551,38 @@
                         Rp85.000
                     </div>
 
-                    <a href="https://wa.me/628136537544" class="buy">
-                        Beli Sekarang
-                    </a>
+                    <button
+                        class="buy"
+                        onclick="addToCart(
+                            'Sunglasses',
+                            85000,
+                            'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80'
+                        )">
+
+                        + Tambah ke Keranjang
+
+                    </button>
 
                 </div>
-
             </div>
 
 
-            <!-- PRODUK 9 -->
-            <div class="card">
+            <!-- PRODUCT 9 -->
+            <div
+                class="card"
+                data-name="Hoodie Premium"
+                data-category="fashion">
 
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80"
-                         alt="Hoodie">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80"
+                        alt="Hoodie Premium">
+
+                    <span class="stock">
+                        STOK TERSEDIA
+                    </span>
+
                 </div>
 
                 <div class="card-content">
@@ -380,21 +602,38 @@
                         Rp175.000
                     </div>
 
-                    <a href="https://wa.me/628136537544" class="buy">
-                        Beli Sekarang
-                    </a>
+                    <button
+                        class="buy"
+                        onclick="addToCart(
+                            'Hoodie Premium',
+                            175000,
+                            'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80'
+                        )">
+
+                        + Tambah ke Keranjang
+
+                    </button>
 
                 </div>
-
             </div>
 
 
-            <!-- PRODUK 10 -->
-            <div class="card">
+            <!-- PRODUCT 10 -->
+            <div
+                class="card"
+                data-name="Smartwatch Pro"
+                data-category="gadget">
 
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
-                         alt="Smartwatch">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+                        alt="Smartwatch Pro">
+
+                    <span class="stock">
+                        STOK TERSEDIA
+                    </span>
+
                 </div>
 
                 <div class="card-content">
@@ -414,21 +653,29 @@
                         Rp325.000
                     </div>
 
-                    <a href="#" class="buy">
-                        Beli Sekarang
-                    </a>
+                    <button
+                        class="buy"
+                        onclick="addToCart(
+                            'Smartwatch Pro',
+                            325000,
+                            'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80'
+                        )">
+
+                        + Tambah ke Keranjang
+
+                    </button>
 
                 </div>
-
             </div>
-
 
         </div>
 
     </section>
 
 
-    <!-- TENTANG -->
+    <!-- =========================
+         TENTANG
+    ========================== -->
     <section class="tentang" id="tentang">
 
         <div class="tentang-content">
@@ -442,7 +689,7 @@
             </h2>
 
             <p>
-                Kribo Store menyediakan berbagai produk
+                ABA STORE menyediakan berbagai produk
                 fashion, aksesoris, dan lifestyle pilihan.
                 Kami mengutamakan kualitas produk,
                 desain menarik, dan harga terjangkau.
@@ -453,7 +700,9 @@
     </section>
 
 
-    <!-- KONTAK -->
+    <!-- =========================
+         KONTAK
+    ========================== -->
     <section class="kontak" id="kontak">
 
         <div class="section-title">
@@ -470,17 +719,23 @@
 
             <div>
                 <h3>📧 Email</h3>
-                <p>kribostore@gmail.com</p>
+                <p>
+                    adimalfisahrin@gmail.com
+                </p>
             </div>
 
             <div>
                 <h3>📱 WhatsApp</h3>
-                <p>0813-6537-544</p>
+                <p>
+                    0813-6537-544
+                </p>
             </div>
 
             <div>
                 <h3>📍 Lokasi</h3>
-                <p>Bangkinang, Indonesia</p>
+                <p>
+                    Bangkinang, Indonesia
+                </p>
             </div>
 
         </div>
@@ -488,18 +743,745 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
     <footer>
 
         <div class="footer-logo">
-            KRIBO<span>STORE</span>
+            ABA<span>STORE</span>
         </div>
 
         <p>
-            © 2026 KRIBO STORE. All Rights Reserved.
+            © 2026 ABA STORE. All Rights Reserved.
         </p>
 
     </footer>
 
+
+    <!-- =========================
+         CART OVERLAY
+    ========================== -->
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+        onclick="closeCart()">
+    </div>
+
+
+    <!-- =========================
+         CART SIDEBAR
+    ========================== -->
+    <aside
+        class="cart"
+        id="cart">
+
+        <div class="cart-header">
+
+            <h2>
+                🛒 Keranjang
+            </h2>
+
+            <button
+                class="close-cart"
+                onclick="closeCart()">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems">
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="summary-row">
+                <span>Jumlah Barang</span>
+
+                <strong id="totalItems">
+                    0
+                </strong>
+            </div>
+
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+
+                <strong id="subtotal">
+                    Rp0
+                </strong>
+            </div>
+
+
+            <div class="summary-row">
+
+                <span class="discount">
+                    Diskon 10%
+                </span>
+
+                <strong
+                    class="discount"
+                    id="discount">
+
+                    Rp0
+
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row total">
+
+                <span>Total</span>
+
+                <strong id="total">
+                    Rp0
+                </strong>
+
+            </div>
+
+
+            <button
+                class="checkout"
+                onclick="checkoutWhatsApp()">
+
+                📱 Checkout via WhatsApp
+
+            </button>
+
+
+            <button
+                class="clear-cart"
+                onclick="clearCart()">
+
+                🗑 Kosongkan Keranjang
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+    <div
+        class="toast"
+        id="toast">
+
+        Produk ditambahkan!
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script>
+
+        /* =========================
+           CART
+        ========================== */
+
+        let cart =
+            JSON.parse(
+                localStorage.getItem("abaStoreCart")
+            ) || [];
+
+
+        /* =========================
+           FORMAT RUPIAH
+        ========================== */
+
+        function formatRupiah(number) {
+
+            return new Intl.NumberFormat(
+                "id-ID",
+                {
+                    style: "currency",
+                    currency: "IDR",
+                    minimumFractionDigits: 0
+                }
+            ).format(number);
+
+        }
+
+
+        /* =========================
+           TAMBAH PRODUK
+        ========================== */
+
+        function addToCart(name, price, image) {
+
+            const existing =
+                cart.find(
+                    item => item.name === name
+                );
+
+
+            if (existing) {
+
+                existing.quantity++;
+
+            } else {
+
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+
+            }
+
+
+            saveCart();
+
+            showToast(
+                name + " ditambahkan ke keranjang!"
+            );
+
+            openCart();
+
+        }
+
+
+        /* =========================
+           SIMPAN CART
+        ========================== */
+
+        function saveCart() {
+
+            localStorage.setItem(
+                "abaStoreCart",
+                JSON.stringify(cart)
+            );
+
+            renderCart();
+
+        }
+
+
+        /* =========================
+           RENDER CART
+        ========================== */
+
+        function renderCart() {
+
+            const cartItems =
+                document.getElementById("cartItems");
+
+            const cartCount =
+                document.getElementById("cartCount");
+
+            const totalItemsElement =
+                document.getElementById("totalItems");
+
+            const subtotalElement =
+                document.getElementById("subtotal");
+
+            const discountElement =
+                document.getElementById("discount");
+
+            const totalElement =
+                document.getElementById("total");
+
+
+            let itemCount = 0;
+            let subtotal = 0;
+
+
+            cart.forEach(item => {
+
+                itemCount += item.quantity;
+
+                subtotal +=
+                    item.price * item.quantity;
+
+            });
+
+
+            /* BELI 2 DISKON 10% */
+
+            let discount = 0;
+
+            if (itemCount >= 2) {
+                discount = subtotal * 0.10;
+            }
+
+
+            const total =
+                subtotal - discount;
+
+
+            cartCount.textContent =
+                itemCount;
+
+            totalItemsElement.textContent =
+                itemCount;
+
+            subtotalElement.textContent =
+                formatRupiah(subtotal);
+
+            discountElement.textContent =
+                formatRupiah(discount);
+
+            totalElement.textContent =
+                formatRupiah(total);
+
+
+            /* CART KOSONG */
+
+            if (cart.length === 0) {
+
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        🛒
+                        <br><br>
+                        Keranjang masih kosong.
+                        <br><br>
+                        Yuk pilih produk favoritmu!
+                    </div>
+                `;
+
+                return;
+            }
+
+
+            /* CART TERISI */
+
+            cartItems.innerHTML =
+                cart.map(
+                    (item, index) => `
+
+                    <div class="cart-item">
+
+                        <img
+                            src="${item.image}"
+                            alt="${item.name}"
+                        >
+
+                        <div class="cart-item-info">
+
+                            <h4>
+                                ${item.name}
+                            </h4>
+
+                            <div class="cart-item-price">
+                                ${formatRupiah(item.price)}
+                            </div>
+
+                            <div class="quantity">
+
+                                <button
+                                    onclick="decreaseQuantity(${index})">
+                                    −
+                                </button>
+
+                                <span>
+                                    ${item.quantity}
+                                </span>
+
+                                <button
+                                    onclick="increaseQuantity(${index})">
+                                    +
+                                </button>
+
+                            </div>
+
+                            <button
+                                class="remove-item"
+                                onclick="removeItem(${index})">
+
+                                Hapus
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `
+                ).join("");
+
+        }
+
+
+        /* =========================
+           TAMBAH JUMLAH
+        ========================== */
+
+        function increaseQuantity(index) {
+
+            cart[index].quantity++;
+
+            saveCart();
+
+        }
+
+
+        /* =========================
+           KURANGI JUMLAH
+        ========================== */
+
+        function decreaseQuantity(index) {
+
+            if (cart[index].quantity > 1) {
+
+                cart[index].quantity--;
+
+            } else {
+
+                cart.splice(index, 1);
+
+            }
+
+            saveCart();
+
+        }
+
+
+        /* =========================
+           HAPUS PRODUK
+        ========================== */
+
+        function removeItem(index) {
+
+            cart.splice(index, 1);
+
+            saveCart();
+
+        }
+
+
+        /* =========================
+           KOSONGKAN CART
+        ========================== */
+
+        function clearCart() {
+
+            if (cart.length === 0) {
+                return;
+            }
+
+
+            const yakin =
+                confirm(
+                    "Yakin ingin mengosongkan keranjang?"
+                );
+
+
+            if (yakin) {
+
+                cart = [];
+
+                saveCart();
+
+                showToast(
+                    "Keranjang dikosongkan."
+                );
+
+            }
+
+        }
+
+
+        /* =========================
+           OPEN CART
+        ========================== */
+
+        function openCart() {
+
+            document
+                .getElementById("cart")
+                .classList.add("active");
+
+            document
+                .getElementById("cartOverlay")
+                .classList.add("active");
+
+            document.body.classList.add("cart-open");
+
+        }
+
+
+        /* =========================
+           CLOSE CART
+        ========================== */
+
+        function closeCart() {
+
+            document
+                .getElementById("cart")
+                .classList.remove("active");
+
+            document
+                .getElementById("cartOverlay")
+                .classList.remove("active");
+
+            document.body.classList.remove("cart-open");
+
+        }
+
+
+        /* =========================
+           CHECKOUT WHATSAPP
+        ========================== */
+
+        function checkoutWhatsApp() {
+
+            if (cart.length === 0) {
+
+                alert(
+                    "Keranjang masih kosong!"
+                );
+
+                return;
+            }
+
+
+            let itemCount = 0;
+            let subtotal = 0;
+
+
+            let message =
+                "Halo ABA STORE,%0A%0A" +
+                "Saya ingin melakukan pemesanan:%0A%0A";
+
+
+            cart.forEach((item, index) => {
+
+                const itemTotal =
+                    item.price * item.quantity;
+
+                itemCount += item.quantity;
+
+                subtotal += itemTotal;
+
+
+                message +=
+                    `${index + 1}. ${item.name} x${item.quantity} = ${formatRupiah(itemTotal)}%0A`;
+
+            });
+
+
+            let discount = 0;
+
+
+            if (itemCount >= 2) {
+                discount = subtotal * 0.10;
+            }
+
+
+            const total =
+                subtotal - discount;
+
+
+            message +=
+                "%0A" +
+                "Jumlah barang: " +
+                itemCount +
+                "%0A" +
+                "Subtotal: " +
+                formatRupiah(subtotal) +
+                "%0A" +
+                "Diskon 10%: " +
+                formatRupiah(discount) +
+                "%0A" +
+                "TOTAL: " +
+                formatRupiah(total) +
+                "%0A%0A" +
+                "Nama:%0A" +
+                "Alamat:%0A" +
+                "Catatan:%0A";
+
+
+            const phone =
+                "628136537544";
+
+
+            const whatsappURL =
+                "https://wa.me/" +
+                phone +
+                "?text=" +
+                message;
+
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        }
+
+
+        /* =========================
+           SEARCH & FILTER
+        ========================== */
+
+        function filterProducts() {
+
+            const search =
+                document
+                    .getElementById("searchInput")
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+
+            const category =
+                document
+                    .getElementById("categoryFilter")
+                    .value;
+
+
+            const cards =
+                document.querySelectorAll(
+                    ".produk-container .card"
+                );
+
+
+            let visible = 0;
+
+
+            cards.forEach(card => {
+
+                const name =
+                    card.dataset.name.toLowerCase();
+
+                const cardCategory =
+                    card.dataset.category;
+
+
+                const matchName =
+                    name.includes(search);
+
+                const matchCategory =
+                    category === "all" ||
+                    cardCategory === category;
+
+
+                if (
+                    matchName &&
+                    matchCategory
+                ) {
+
+                    card.style.display =
+                        "";
+
+                    visible++;
+
+                } else {
+
+                    card.style.display =
+                        "none";
+
+                }
+
+            });
+
+
+            let noResult =
+                document.querySelector(".no-result");
+
+
+            if (visible === 0) {
+
+                if (!noResult) {
+
+                    noResult =
+                        document.createElement("div");
+
+                    noResult.className =
+                        "no-result";
+
+                    noResult.textContent =
+                        "😕 Produk tidak ditemukan.";
+
+                    document
+                        .getElementById("productContainer")
+                        .appendChild(noResult);
+
+                }
+
+            } else {
+
+                if (noResult) {
+                    noResult.remove();
+                }
+
+            }
+
+        }
+
+
+        /* =========================
+           TOAST
+        ========================== */
+
+        function showToast(message) {
+
+            const toast =
+                document.getElementById("toast");
+
+
+            toast.textContent =
+                message;
+
+
+            toast.classList.add("show");
+
+
+            clearTimeout(
+                window.toastTimer
+            );
+
+
+            window.toastTimer =
+                setTimeout(() => {
+
+                    toast.classList.remove("show");
+
+                }, 2500);
+
+        }
+
+
+        /* =========================
+           ESC UNTUK TUTUP CART
+        ========================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeCart();
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           INITIALIZE
+        ========================== */
+
+        renderCart();
+
+    </script>
+
 </body>
 </html>
+
