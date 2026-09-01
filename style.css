@@ -1,6 +1,6 @@
-/* ===================================
+//* =====================================================
    RESET
-=================================== */
+===================================================== */
 
 * {
     margin: 0;
@@ -19,21 +19,32 @@ body {
     line-height: 1.6;
 }
 
+body.cart-open {
+    overflow: hidden;
+}
+
 a {
     text-decoration: none;
 }
 
+button,
+input,
+select {
+    font-family: inherit;
+}
 
-/* ===================================
+
+/* =====================================================
    NAVBAR
-=================================== */
+===================================================== */
 
 header {
-    background: #ffffff;
-    border-bottom: 1px solid #eeeeee;
+    background: #fff;
+    border-bottom: 1px solid #eee;
 
     position: sticky;
     top: 0;
+
     z-index: 1000;
 }
 
@@ -41,9 +52,9 @@ header {
     width: 90%;
     max-width: 1100px;
 
-    margin: auto;
-
     min-height: 70px;
+
+    margin: auto;
 
     display: flex;
     align-items: center;
@@ -51,9 +62,10 @@ header {
 }
 
 .logo {
+    color: #222;
+
     font-size: 25px;
     font-weight: bold;
-    color: #222;
 }
 
 .logo span {
@@ -62,11 +74,14 @@ header {
 
 .menu {
     display: flex;
-    gap: 30px;
+    align-items: center;
+
+    gap: 22px;
 }
 
 .menu a {
     color: #555;
+
     font-size: 14px;
     font-weight: bold;
 
@@ -77,13 +92,68 @@ header {
     color: #ff5a36;
 }
 
+.cart-button {
+    border: none;
 
-/* ===================================
+    background: #222;
+    color: #fff;
+
+    padding: 10px 14px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.cart-button:hover {
+    background: #ff5a36;
+}
+
+.cart-count {
+    background: #ff5a36;
+
+    padding: 2px 6px;
+
+    margin-left: 4px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   PROMO
+===================================================== */
+
+.promo {
+    background: #ff5a36;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 10px;
+
+    font-size: 13px;
+}
+
+.promo strong {
+    font-size: 15px;
+}
+
+
+/* =====================================================
    HERO
-=================================== */
+===================================================== */
 
 .hero {
-    min-height: 520px;
+    min-height: 530px;
 
     display: flex;
     align-items: center;
@@ -93,7 +163,7 @@ header {
             rgba(0, 0, 0, 0.65),
             rgba(0, 0, 0, 0.65)
         ),
-        url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=80");
+        url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80");
 
     background-size: cover;
     background-position: center;
@@ -120,7 +190,7 @@ header {
 }
 
 .hero h1 {
-    max-width: 650px;
+    max-width: 700px;
 
     font-size: 65px;
     line-height: 1;
@@ -135,7 +205,7 @@ header {
 .description {
     max-width: 500px;
 
-    color: #dddddd;
+    color: #ddd;
 
     font-size: 15px;
 
@@ -148,9 +218,9 @@ header {
     background: #ff5a36;
     color: white;
 
-    padding: 13px 25px;
+    padding: 14px 25px;
 
-    border-radius: 5px;
+    border-radius: 6px;
 
     font-size: 13px;
     font-weight: bold;
@@ -164,14 +234,14 @@ header {
 }
 
 
-/* ===================================
+/* =====================================================
    SECTION TITLE
-=================================== */
+===================================================== */
 
 .section-title {
     text-align: center;
 
-    margin-bottom: 45px;
+    margin-bottom: 35px;
 }
 
 .section-title p {
@@ -196,13 +266,87 @@ header {
 }
 
 
-/* ===================================
+/* =====================================================
    PRODUK
-=================================== */
+===================================================== */
 
 .produk {
     padding: 90px 0;
 }
+
+
+/* =====================================================
+   SEARCH & FILTER
+===================================================== */
+
+.tools {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto 35px;
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 220px;
+}
+
+.search-box input {
+    width: 100%;
+
+    padding: 13px 16px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background: white;
+
+    font-size: 13px;
+}
+
+.search-box input:focus {
+    border-color: #ff5a36;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 90, 54, 0.1);
+}
+
+.filter {
+    min-width: 170px;
+
+    padding: 13px 16px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    background: white;
+
+    outline: none;
+
+    cursor: pointer;
+
+    color: #444;
+}
+
+.filter:focus {
+    border-color: #ff5a36;
+}
+
+
+/* =====================================================
+   PRODUCT GRID
+===================================================== */
 
 .produk-container {
     width: 90%;
@@ -219,7 +363,9 @@ header {
 }
 
 
-/* CARD */
+/* =====================================================
+   CARD
+===================================================== */
 
 .card {
     background: white;
@@ -236,7 +382,7 @@ header {
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
 
     box-shadow:
         0 15px 30px
@@ -244,13 +390,19 @@ header {
 }
 
 
-/* GAMBAR */
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
 
 .card-image {
     width: 100%;
-    height: 240px;
+    height: 230px;
 
     overflow: hidden;
+
+    position: relative;
+
+    background: #eee;
 }
 
 .card-image img {
@@ -259,6 +411,8 @@ header {
 
     object-fit: cover;
 
+    display: block;
+
     transition: 0.4s;
 }
 
@@ -266,11 +420,31 @@ header {
     transform: scale(1.08);
 }
 
+.stock {
+    position: absolute;
 
-/* ISI CARD */
+    top: 10px;
+    right: 10px;
+
+    background: #20a464;
+
+    color: white;
+
+    padding: 5px 8px;
+
+    border-radius: 4px;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
 
 .card-content {
-    padding: 20px;
+    padding: 18px;
 }
 
 .card-content small {
@@ -306,17 +480,18 @@ header {
 }
 
 .buy {
-    display: block;
+    width: 100%;
+
+    border: none;
 
     background: #222;
-
     color: white;
 
-    text-align: center;
+    padding: 11px;
 
-    padding: 10px;
+    border-radius: 5px;
 
-    border-radius: 4px;
+    cursor: pointer;
 
     font-size: 11px;
     font-weight: bold;
@@ -329,9 +504,9 @@ header {
 }
 
 
-/* ===================================
+/* =====================================================
    TENTANG
-=================================== */
+===================================================== */
 
 .tentang {
     padding: 90px 20px;
@@ -362,9 +537,9 @@ header {
 }
 
 
-/* ===================================
+/* =====================================================
    KONTAK
-=================================== */
+===================================================== */
 
 .kontak {
     padding: 90px 20px;
@@ -394,6 +569,16 @@ header {
     background: #f7f7f7;
 
     border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.contact-info div:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(0, 0, 0, 0.08);
 }
 
 .contact-info h3 {
@@ -409,9 +594,9 @@ header {
 }
 
 
-/* ===================================
+/* =====================================================
    FOOTER
-=================================== */
+===================================================== */
 
 footer {
     padding: 30px 20px;
@@ -425,6 +610,7 @@ footer {
 
 .footer-logo {
     font-size: 22px;
+
     font-weight: bold;
 
     margin-bottom: 5px;
@@ -441,9 +627,402 @@ footer p {
 }
 
 
-/* ===================================
+/* =====================================================
+   CART OVERLAY
+===================================================== */
+
+.cart-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    z-index: 2000;
+
+    display: none;
+}
+
+.cart-overlay.active {
+    display: block;
+}
+
+
+/* =====================================================
+   CART SIDEBAR
+===================================================== */
+
+.cart {
+    position: fixed;
+
+    top: 0;
+    right: -430px;
+
+    width: 400px;
+    max-width: 90%;
+
+    height: 100vh;
+
+    background: white;
+
+    z-index: 2100;
+
+    transition: 0.35s;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow:
+        -10px 0 30px
+        rgba(0, 0, 0, 0.15);
+}
+
+.cart.active {
+    right: 0;
+}
+
+
+/* =====================================================
+   CART HEADER
+===================================================== */
+
+.cart-header {
+    padding: 20px;
+
+    border-bottom: 1px solid #eee;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.cart-header h2 {
+    font-size: 20px;
+}
+
+.close-cart {
+    border: none;
+
+    background: #eee;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.close-cart:hover {
+    background: #ff5a36;
+
+    color: white;
+}
+
+
+/* =====================================================
+   CART ITEMS
+===================================================== */
+
+.cart-items {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 15px;
+}
+
+.cart-item {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    flex-shrink: 0;
+}
+
+.cart-item-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.cart-item-info h4 {
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+.cart-item-price {
+    color: #ff5a36;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   QUANTITY
+===================================================== */
+
+.quantity {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.quantity button {
+    width: 25px;
+    height: 25px;
+
+    border: none;
+
+    background: #eee;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.quantity button:hover {
+    background: #ff5a36;
+
+    color: white;
+}
+
+.quantity span {
+    min-width: 20px;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+.remove-item {
+    color: #e53935;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    margin-top: 5px;
+}
+
+.remove-item:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   EMPTY CART
+===================================================== */
+
+.empty-cart {
+    text-align: center;
+
+    color: #888;
+
+    padding: 50px 20px;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CART FOOTER
+===================================================== */
+
+.cart-footer {
+    padding: 20px;
+
+    border-top: 1px solid #eee;
+
+    background: #fff;
+}
+
+.summary-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+}
+
+.discount {
+    color: #20a464;
+
+    font-weight: bold;
+}
+
+.total {
+    font-size: 18px;
+
+    font-weight: bold;
+
+    padding-top: 10px;
+
+    border-top: 1px dashed #ddd;
+
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   CHECKOUT
+===================================================== */
+
+.checkout {
+    width: 100%;
+
+    border: none;
+
+    background: #25D366;
+
+    color: white;
+
+    padding: 13px;
+
+    border-radius: 6px;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.checkout:hover {
+    background: #1da851;
+}
+
+.clear-cart {
+    width: 100%;
+
+    border: none;
+
+    background: #eee;
+
+    color: #555;
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    margin-top: 8px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition: 0.3s;
+}
+
+.clear-cart:hover {
+    background: #ddd;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+    position: fixed;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(100px);
+
+    background: #222;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    z-index: 5000;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =====================================================
+   NO RESULT
+===================================================== */
+
+.no-result {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 50px;
+
+    color: #777;
+
+    background: white;
+
+    border-radius: 8px;
+}
+
+
+/* =====================================================
    TABLET
-=================================== */
+===================================================== */
 
 @media (max-width: 900px) {
 
@@ -459,26 +1038,44 @@ footer p {
 }
 
 
-/* ===================================
+/* =====================================================
    HP
-=================================== */
+===================================================== */
 
 @media (max-width: 600px) {
 
     .navbar {
         flex-direction: column;
 
-        padding: 18px 0;
+        padding: 15px 0;
 
-        gap: 15px;
+        gap: 13px;
     }
 
     .menu {
-        gap: 15px;
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        flex-wrap: wrap;
     }
 
     .menu a {
         font-size: 11px;
+    }
+
+    .cart-button {
+        font-size: 10px;
+    }
+
+    .promo {
+        font-size: 10px;
+    }
+
+    .promo strong {
+        font-size: 12px;
     }
 
     .hero {
@@ -495,6 +1092,18 @@ footer p {
 
     .produk {
         padding: 70px 0;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .tools {
+        width: 90%;
+    }
+
+    .filter {
+        width: 100%;
     }
 
     .produk-container {
@@ -518,6 +1127,8 @@ footer p {
 
     .card-content p {
         font-size: 10px;
+
+        min-height: 65px;
     }
 
     .harga {
@@ -525,11 +1136,44 @@ footer p {
     }
 
     .buy {
-        font-size: 10px;
+        font-size: 9px;
+
+        padding: 9px 5px;
     }
 
     .contact-info {
         grid-template-columns: 1fr;
+    }
+
+    .tentang h2 {
+        font-size: 32px;
+    }
+
+    .cart {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   HP KECIL
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .produk-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card-image {
+        height: 230px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
     }
 
 }
